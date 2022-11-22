@@ -1,0 +1,70 @@
+<hr />
+<button (click)="Home()">Home</button>
+<button (click)="Create()">Create</button>
+<p>Use any combination of fields below to search through all customers</p>
+
+<div class="col-8">
+  <input
+    class="form-control w-100"
+    type="search"
+    [(ngModel)]="firstName"
+    placeholder="Enter first name"
+  />
+</div>
+<br>
+<div class="col-8">
+  <input
+    class="form-control w-100"
+    type="search"
+    [(ngModel)]="lastName"
+    placeholder="Enter last name"
+  />
+</div>
+<br>
+<div class="col-8">
+  <input
+    class="form-control w-100"
+    type="search"
+    [(ngModel)]="dob"
+    placeholder="Enter date of birth (yyyy-mm-dd)"
+  />
+</div>
+<br>
+<div class="col-8">
+  <input
+    class="form-control w-100"
+    type="search"
+    [(ngModel)]="appId"
+    placeholder="Enter Application ID"
+  />
+</div>
+
+<br />
+
+<table class="table table-bordered table-dark">
+  <tr>
+    <th scope="col">MemberId</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Middle Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Date of Birth</th>
+    <th scope="col">Gender</th>
+  </tr>
+  <tr
+    *ngFor="
+      let m of members
+        | FirstNamePipe: firstName
+        | LastNamePipe: lastName
+        | DobPipe: dob
+        | AppIdPipe: appId
+    "
+    scope="row"
+  >
+    <td>{{ m.memberId }}</td>
+    <td>{{ m.firstName }}</td>
+    <td>{{ m.middleInitial }}</td>
+    <td>{{ m.lastName }}</td>
+    <td>{{ m.dateOfBirth }}</td>
+    <td>{{ m.gender }}</td>
+  </tr>
+</table>

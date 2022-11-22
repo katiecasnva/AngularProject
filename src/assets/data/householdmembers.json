@@ -1,0 +1,180 @@
+{
+  "householdmembers": [
+    {
+      "applicationId": 1,
+      "memberId": 1,
+      "firstName": "Xavier",
+      "middleInitial": "M",
+      "lastName": "Young",
+      "suffix": "",
+      "dateOfBirth": "1998-12-21",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "applicationId": 1,
+      "memberId": 2,
+      "firstName": "Emerson",
+      "middleInitial": "M",
+      "lastName": "Gomez",
+      "suffix": "",
+      "dateOfBirth": "2002-06-18",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "applicationId": 1,
+      "memberId": 3,
+      "firstName": "Katie",
+      "middleInitial": "",
+      "lastName": "Casanova",
+      "suffix": "",
+      "dateOfBirth": "2000-12-23",
+      "gender": "Female",
+      "id": 3
+    },
+    {
+      "applicationId": 2,
+      "memberId": 1,
+      "firstName": "Madara",
+      "middleInitial": "",
+      "lastName": "Uchiha",
+      "suffix": "",
+      "gender": "Male",
+      "dateOfBirth": "1965-05-10",
+      "id": 4
+    },
+    {
+      "applicationId": 2,
+      "memberId": 2,
+      "firstName": "Juri",
+      "middleInitial": "",
+      "lastName": "Han",
+      "suffix": "",
+      "gender": "Female",
+      "dateOfBirth": "1986-10-17",
+      "id": 5
+    },
+    {
+      "applicationId": 2,
+      "memberId": 3,
+      "firstName": "Lord",
+      "middleInitial": "",
+      "lastName": "Beerus",
+      "suffix": "",
+      "gender": "Male",
+      "dateOfBirth": "1969-06-24",
+      "id": 6
+    },
+    {
+      "applicationId": 1,
+      "memberId": 1,
+      "firstName": "test",
+      "middleInitial": "case",
+      "lastName": "one",
+      "suffix": "Jr.",
+      "gender": "Male",
+      "dateOfBirth": "1899-05-15",
+      "id": 7
+    },
+    {
+      "applicationId": 1,
+      "memberId": 2,
+      "firstName": "test-case",
+      "middleInitial": "",
+      "lastName": "two",
+      "suffix": "Jr.",
+      "gender": "Female",
+      "dateOfBirth": "1919-06-15",
+      "id": 8
+    },
+    {
+      "applicationId": 1,
+      "memberId": 3,
+      "firstName": "test",
+      "middleInitial": "",
+      "lastName": "case*three",
+      "suffix": "",
+      "gender": "Female",
+      "dateOfBirth": "1945-01-15",
+      "id": 9
+    },
+    {
+      "applicationId": 1,
+      "memberId": 4,
+      "firstName": "test",
+      "middleInitial": "",
+      "lastName": "case'four",
+      "suffix": "",
+      "gender": "Female",
+      "dateOfBirth": "1930-08-15",
+      "id": 10
+    },
+    {
+      "applicationId": 1,
+      "memberId": 5,
+      "firstName": "test'case",
+      "middleInitial": "",
+      "lastName": "case-five",
+      "suffix": "",
+      "gender": "Female",
+      "dateOfBirth": "1975-09-15",
+      "id": 11
+    },
+    {
+      "applicationId": 2,
+      "memberId": 1,
+      "firstName": "test'case",
+      "middleInitial": "",
+      "lastName": "case-six",
+      "suffix": "",
+      "dateOfBirth": "1965-10-15",
+      "gender": "Male",
+      "id": 12
+    },
+    {
+      "applicationId": 2,
+      "memberId": 1,
+      "firstName": "Sonic",
+      "middleInitial": "",
+      "lastName": "Hedgehog",
+      "suffix": "",
+      "dateOfBirth": "1991-06-23",
+      "gender": "Male",
+      "id": 13
+    },
+    {
+      "applicationId": 6,
+      "memberId": 1,
+      "firstName": "Shadow",
+      "middleInitial": "The",
+      "lastName": "Hedgehog",
+      "suffix": "",
+      "dateOfBirth": "2005-11-15",
+      "gender": "Male",
+      "id": 14
+    },
+    {
+      "applicationId": 7,
+      "memberId": 1,
+      "firstName": "Chun",
+      "middleInitial": "",
+      "lastName": "Li",
+      "suffix": "",
+      "dateOfBirth": "1990-11-15",
+      "gender": "Male",
+      "id": 15
+    },
+    {
+      "applicationId": 8,
+      "memberId": 1,
+      "firstName": "Ryu",
+      "middleInitial": "",
+      "lastName": "Hoshi",
+      "suffix": "",
+      "dateOfBirth": "2005-11-15",
+      "gender": "Male",
+      "id": 16
+    }
+  ]
+}

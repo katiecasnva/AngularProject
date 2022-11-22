@@ -1,0 +1,244 @@
+<div class="container-fluid" id="containerFluid">
+  <form #memberForm="ngForm">
+    <!-- Valid: {{memberForm.form.valid | json}} -->
+
+    <!--Application ID -->
+    <div class="form-group">
+      <h1>Household Information</h1>
+      <label>Application ID</label><br />
+      <input
+        type="text"
+        class="form-control"
+        name="applicationId"
+        #applicationId="ngModel"
+        [(ngModel)]="memberModel.applicationId"
+        readonly
+      />
+    </div>
+
+    <!--Member ID -->
+    <div class="form-group">
+      <label>Member ID</label><br />
+      <input
+        type="text"
+        class="form-control"
+        name="memberId"
+        #memberId="ngModel"
+        [(ngModel)]="memberModel.memberId"
+        readonly
+      />
+    </div>
+
+    <!--First Name -->
+    <div class="form-group" id="formGroup">
+      <label><span class="text-danger">*</span> First Name</label><br />
+      <input
+        type="text"
+        class="form-control"
+        name="firstName"
+        #firstName="ngModel"
+        [(ngModel)]="memberModel.firstName"
+        required
+        pattern="^[a-zA-Z\\*\-\\']+$"
+        [class.is-invalid]="
+          (firstName.invalid && firstName.touched && !memberForm.submitted) ||
+          (firstName.invalid && firstName.touched && memberForm.submitted)
+        "
+      />
+    </div>
+
+    <!-- First Name Validation -->
+    <small
+      *ngIf="firstName.errors?.['required'] && firstName.invalid && firstName.touched && !memberForm.submitted
+        || firstName.errors?.['required'] && firstName.invalid && firstName.touched && memberForm.submitted"
+      class="text-danger"
+      >First name is required</small
+    >
+
+    <small
+      *ngIf="firstName.errors?.['pattern'] && firstName.invalid && firstName.touched && !memberForm.submitted
+        || firstName.errors?.['pattern'] && firstName.invalid && firstName.touched && memberForm.submitted"
+      class="text-danger"
+      >First name is required</small
+    >
+
+    <!-- Middle Name -->
+    <div class="form-group">
+      <label>M.I.</label><br />
+      <input
+        type="text"
+        class="form-control"
+        name="middleInitial"
+        pattern="^[a-zA-Z\\*\-\\']+$"
+        #middleInitial="ngModel"
+        [(ngModel)]="memberModel.middleInitial"
+        [class.is-invalid]="
+          (middleInitial.invalid &&
+            middleInitial.touched &&
+            !memberForm.submitted) ||
+          (middleInitial.invalid &&
+            middleInitial.touched &&
+            memberForm.submitted)
+        "
+      />
+    </div>
+
+    <!-- Middle Name Validation -->
+    <small
+      *ngIf="middleInitial.errors?.['pattern'] && middleInitial.invalid && middleInitial.touched && !memberForm.submitted
+        || middleInitial.errors?.['pattern'] && middleInitial.invalid && middleInitial.touched && memberForm.submitted"
+      class="text-danger"
+      >Middle name is invalid</small
+    >
+
+    <!--Last Name -->
+    <div class="form-group">
+      <label><span class="text-danger">*</span> Last Name</label><br />
+      <input
+        type="text"
+        class="form-control"
+        name="lastName"
+        #lastName="ngModel"
+        [(ngModel)]="memberModel.lastName"
+        pattern="^[a-zA-Z\\*\-\\']+$"
+        required
+        [class.is-invalid]="
+          (lastName.invalid && lastName.touched && !memberForm.submitted) ||
+          (lastName.invalid && lastName.touched && memberForm.submitted)
+        "
+      />
+    </div>
+
+    <!--Last Name Validation  -->
+    <small
+      *ngIf="(lastName.errors?.['required'] && lastName.invalid && lastName.touched && !memberForm.submitted) 
+            || (lastName.errors?.['required'] && lastName.invalid && lastName.touched && memberForm.submitted)"
+      class="text-danger"
+    >
+      Last name is required</small
+    >
+
+    <small
+      *ngIf="lastName.errors?.['pattern'] && lastName.invalid && lastName.touched && !memberForm.submitted
+            || (lastName.errors?.['pattern'] && lastName.invalid && lastName.touched && memberForm.submitted)"
+      class="text-danger"
+    >
+      Last name is invalid</small
+    >
+
+    <!-- Suffix -->
+    <div class="form-group">
+      <label>Suffix Name</label><br />
+      <select
+        class="form-control"
+        name="suffix"
+        [(ngModel)]="memberModel.suffix"
+      >
+        <option value=""></option>
+        <option value="Jr.">Jr.</option>
+        <option value="Sr.">Sr.</option>
+        <option value="III">III</option>
+      </select>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="form-group">
+      <label><span class="text-danger">*</span> Date of Birth</label><br />
+      <input
+        type="date"
+        class="form-control"
+        name="dateOfBirth"
+        required
+        #dateOfBirth="ngModel"
+        [(ngModel)]="memberModel.dateOfBirth"
+        [class.is-invalid]="
+          (dateOfBirth.invalid &&
+            dateOfBirth.touched &&
+            !memberForm.submitted) ||
+          (dateOfBirth.invalid && dateOfBirth.touched && memberForm.submitted)
+        "
+      />
+    </div>
+    <small
+      *ngIf="
+        (dateOfBirth.invalid && dateOfBirth.touched && !memberForm.submitted) ||
+        (dateOfBirth.invalid && dateOfBirth.touched && memberForm.submitted)
+      "
+      class="text-danger"
+      >Date is required</small
+    >
+
+    <!-- Gender -->
+    <div class="mb-3">
+      <label><span class="text-danger">*</span> Gender</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          required
+          name="gender"
+          #gender="ngModel"
+          [class.is-invalid]="
+            !isGenderValid(gender.value) &&
+            gender.touched &&
+            !memberForm.submitted
+          "
+          value="Male"
+          [(ngModel)]="memberModel.gender"
+        />
+        <label class="form-check-label">Male</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          #gender="ngModel"
+          [class.is-invalid]="
+            !isGenderValid(gender.value) &&
+            gender.touched &&
+            !memberForm.submitted
+          "
+          value="Female"
+          [(ngModel)]="memberModel.gender"
+        />
+        <label class="form-check-label">Female</label>
+      </div>
+    </div>
+    <small
+      *ngIf="
+        (!isGenderValid(gender.value) &&
+          gender.touched &&
+          !memberForm.submitted) ||
+        (!isGenderValid(gender.value) && gender.touched && memberForm.submitted)
+      "
+      class="text-danger"
+      >Gender required</small
+    >
+
+    <button
+      (click)="
+        SaveAndExit(
+          memberForm.value,
+          memberForm.form.valid,
+          memberForm.form.dirty
+        )
+      "
+    >
+      Save and Exit
+    </button>
+    <button
+      (click)="
+        AddMember(
+          memberForm.value,
+          memberForm.form.valid,
+          memberForm.form.dirty
+        )
+      "
+    >
+      Add Member
+    </button>
+    <br />
+
+  </form>
+</div>
